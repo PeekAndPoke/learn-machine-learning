@@ -16,11 +16,10 @@ p = zeros(m, 1);
 %
 
 
-p = sigmoid(X * theta);
+p = round(sigmoid(X * theta));
 
-p(p >= 0.5) = 1;
-p(p <  0.5) = 0;
-
+% map to only 0 and 1 values
+p = round(p);
 
 % =========================================================================
 
