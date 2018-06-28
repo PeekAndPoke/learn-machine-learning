@@ -36,14 +36,17 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+% calculate without regularization
 
+hypo = sigmoid(X * theta);
 
+theta(1,1) = 0; % do not do regularization on J(1) or grad(1)
 
-
-
-
-
-
+J    = (1/m) * ((-y') * log(hypo) - (1-y)' * log(1 - hypo)) ...
+     + (lambda / (2*m)) * (theta' * theta);
+                           
+lVec = (lambda / m) * theta;
+grad = (1/m) * X' * (hypo - y) + lVec;
 
 % =============================================================
 

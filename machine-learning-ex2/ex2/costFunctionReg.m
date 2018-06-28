@@ -19,14 +19,14 @@ grad = zeros(size(theta));
 
 [J, grad] = costFunction(theta, X, y);
 
+% no regularization on J(1) or grad(1)
+theta(1) = 0; 
+
 % apply regularization term to "J"
-J = J + ((lambda/m) * sum(theta)); 
+J = J + (lambda/(2*m)) * (theta' * theta); 
 
-% apply regularization to "grad" without regularization of theta(1)
-lamdbaVec       = theta * (lambda / m);
-lamdbaVec(1, 1) = 0;
-
-grad = grad + lamdbaVec;
+% apply regularization to "grad"
+grad = grad + (lambda / m) * theta;
 
 % =============================================================
 
