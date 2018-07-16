@@ -20,13 +20,15 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-hypo    = sigmoid(X * theta);
 
-J = 1/m * ( (-y' * log(hypo)) - (1-y)' * log(1 - hypo) );
+% calculate the hypothesis
+hypo = sigmoid(X * theta);
 
+% calculate the cost
+J    = 1/m * ( (-y' * log(hypo)) - (1-y)' * log(1 - hypo) );
 
+% calcuale the gradients
 grad = 1/m * X' * (hypo - y);
-
 
 
 % =============================================================

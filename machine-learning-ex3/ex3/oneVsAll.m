@@ -50,7 +50,7 @@ X = [ones(m, 1) X];
 %
 
 
-  options = optimset('GradObj', 'on', 'MaxIter', 200);
+options = optimset('GradObj', 'on', 'MaxIter', 50);
 
 for c = 1:num_labels
 

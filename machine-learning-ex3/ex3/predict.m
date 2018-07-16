@@ -21,15 +21,19 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Add bias to the X (a1)
+a1 = [ones(m, 1) X];
 
+% calc layer a2 and add bias
+a2 = sigmoid(a1 * Theta1');
+a2 = [ones(size(a2), 1) a2];
 
+% calc layer a3
+a3 = sigmoid(a2 * Theta2');
 
-
-
-
-
+% get the prob and the index of best fit
+[probability, p] = max(a3, [], 2);
 
 % =========================================================================
-
 
 end
