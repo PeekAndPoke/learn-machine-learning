@@ -20,14 +20,23 @@ grad = zeros(size(theta));
 %
 
 
+thetaReg = theta;
+thetaReg(1) = 0;
 
 
+hypoMinusY = X * theta - y;
 
+J = (1 / (2*m)) ...
+    * sum(hypoMinusY .^ 2) ...
+    + (lambda / (2*m)) * sum(thetaReg .^ 2);
 
-
-
-
-
+%X   
+%hypoMinusY 
+%X' * hypoMinusY
+    
+grad = (1/m) ...
+     * X' * hypoMinusY ...
+     + (lambda / m) * thetaReg;
 
 
 % =========================================================================
