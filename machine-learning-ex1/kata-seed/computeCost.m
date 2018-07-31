@@ -13,14 +13,9 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-  % apply the hypothesis for each example
-  hypo = X * theta;
 
-  % calc the error for each example
-  error = (hypo - y) .^ 2;
 
-  % calc the cost
-  J = (1 / (2 * m)) * sum(error);
+
 
 % =========================================================================
 

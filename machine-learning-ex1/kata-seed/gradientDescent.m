@@ -18,21 +18,8 @@ for iter = 1:num_iters
     %
 
 
-    % calc hypothesis for each example
-    hypo = X * theta;
-    % calc dist from expected output for each example
-    dist = hypo - y;
-    
-    % calc the gradient by adding up the contributions of each example
-    grad = (alpha / m) * X' * dist;
-    
-    % calc new theta
-    theta = theta - grad; 
-    
-%    theta = [ 
-%      theta(1) - (alpha / m) * xThetaMinusYTransp * X(:,1);  
-%      theta(2) - (alpha / m) * xThetaMinusYTransp * X(:,2) 
-%    ];
+
+
 
 
 
@@ -41,7 +28,6 @@ for iter = 1:num_iters
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
 
-    
 end
 
 end

@@ -18,16 +18,14 @@ for iter = 1:num_iters
     %
 
 
-    xThetaMinusYTransp = ((X * theta) - y)';
-    
-    numFeatures = size(X)(2);
-    temp        = zeros(numFeatures, 1);
-    
-    for dim = 1:numFeatures
-      temp(dim, 1) = theta(dim) - (alpha / m) * xThetaMinusYTransp * X(:,dim);  
-    end
 
-    theta = temp;
+
+
+
+
+
+
+
 
     % ============================================================
 
